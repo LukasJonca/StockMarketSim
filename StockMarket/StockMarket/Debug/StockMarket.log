@@ -1,0 +1,121 @@
+﻿  Account.cpp
+l:\vs\vc\tools\msvc\14.16.27023\include\utility(320): error C2079: 'std::pair<const _Kty,_Ty>::second' uses undefined class 'Position'
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(401): note: see reference to class template instantiation 'std::pair<const _Kty,_Ty>' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(947): note: see reference to class template instantiation 'std::_Tree_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>' being compiled
+          with
+          [
+              _Ty=std::pair<const std::string,Position>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(946): note: while compiling class template member function 'void std::_Tree_comp_alloc<_Traits>::_Freeheadnode(std::_Tree_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *)'
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,Position,std::less<std::string>,std::allocator<std::pair<const std::string,Position>>,false>,
+              _Ty=std::pair<const std::string,Position>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(839): note: see reference to function template instantiation 'void std::_Tree_comp_alloc<_Traits>::_Freeheadnode(std::_Tree_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *)' being compiled
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,Position,std::less<std::string>,std::allocator<std::pair<const std::string,Position>>,false>,
+              _Ty=std::pair<const std::string,Position>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(1032): note: see reference to class template instantiation 'std::_Tree_comp_alloc<_Traits>' being compiled
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,Position,std::less<std::string>,std::allocator<std::pair<const std::string,Position>>,false>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\map(82): note: see reference to class template instantiation 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  c:\users\lukas\source\repos\stockmarket\stockmarket\account.h(11): note: see reference to class template instantiation 'std::map<std::string,Position,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position
+          ]
+l:\vs\vc\tools\msvc\14.16.27023\include\type_traits(852): error C2139: 'Position': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_constructible'
+  c:\users\lukas\source\repos\stockmarket\stockmarket\position.h(2): note: see declaration of 'Position'
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(416): note: see reference to class template instantiation 'std::is_default_constructible<_Ty2>' being compiled
+          with
+          [
+              _Ty2=Position
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\type_traits(852): note: see reference to variable template 'const bool conjunction_v<std::is_default_constructible<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const >,std::is_default_constructible<Position>,std::negation<std::conjunction<std::_Is_implicitly_default_constructible<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,void>,std::_Is_implicitly_default_constructible<Position,void> > > >' being compiled
+  Main.cpp
+l:\vs\vc\tools\msvc\14.16.27023\include\utility(320): error C2079: 'std::pair<const _Kty,_Ty>::second' uses undefined class 'Position'
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(401): note: see reference to class template instantiation 'std::pair<const _Kty,_Ty>' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(947): note: see reference to class template instantiation 'std::_Tree_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer>' being compiled
+          with
+          [
+              _Ty=std::pair<const std::string,Position>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(946): note: while compiling class template member function 'void std::_Tree_comp_alloc<_Traits>::_Freeheadnode(std::_Tree_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *)'
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,Position,std::less<std::string>,std::allocator<std::pair<const std::string,Position>>,false>,
+              _Ty=std::pair<const std::string,Position>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(839): note: see reference to function template instantiation 'void std::_Tree_comp_alloc<_Traits>::_Freeheadnode(std::_Tree_node<_Ty,std::_Default_allocator_traits<_Alloc>::void_pointer> *)' being compiled
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,Position,std::less<std::string>,std::allocator<std::pair<const std::string,Position>>,false>,
+              _Ty=std::pair<const std::string,Position>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(1032): note: see reference to class template instantiation 'std::_Tree_comp_alloc<_Traits>' being compiled
+          with
+          [
+              _Traits=std::_Tmap_traits<std::string,Position,std::less<std::string>,std::allocator<std::pair<const std::string,Position>>,false>
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\map(82): note: see reference to class template instantiation 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,Position>>
+          ]
+  c:\users\lukas\source\repos\stockmarket\stockmarket\account.h(11): note: see reference to class template instantiation 'std::map<std::string,Position,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>' being compiled
+          with
+          [
+              _Kty=std::string,
+              _Ty=Position
+          ]
+l:\vs\vc\tools\msvc\14.16.27023\include\type_traits(852): error C2139: 'Position': an undefined class is not allowed as an argument to compiler intrinsic type trait '__is_constructible'
+  c:\users\lukas\source\repos\stockmarket\stockmarket\position.h(2): note: see declaration of 'Position'
+  l:\vs\vc\tools\msvc\14.16.27023\include\xtree(416): note: see reference to class template instantiation 'std::is_default_constructible<_Ty2>' being compiled
+          with
+          [
+              _Ty2=Position
+          ]
+  l:\vs\vc\tools\msvc\14.16.27023\include\type_traits(852): note: see reference to variable template 'const bool conjunction_v<std::is_default_constructible<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const >,std::is_default_constructible<Position>,std::negation<std::conjunction<std::_Is_implicitly_default_constructible<std::basic_string<char,std::char_traits<char>,std::allocator<char> > const ,void>,std::_Is_implicitly_default_constructible<Position,void> > > >' being compiled
+  Generating Code...
