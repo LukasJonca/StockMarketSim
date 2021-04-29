@@ -1,10 +1,12 @@
 #pragma once
 
-class IAsset {	
-private:
-	double price;
+class IAsset {
+
 public:
+	
+	
 	virtual ~IAsset();
-	virtual void movePrice();
-	virtual double getPrice();
+	virtual void movePrice(int days) = 0;
+	
+
 };

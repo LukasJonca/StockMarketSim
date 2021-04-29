@@ -1,6 +1,16 @@
 #pragma once
-class bond {
+#include "Asset.h"
+#include "IAsset.h"
+#include <string>
+
+class Bond : public Asset {
 private:
-	int term;
+	int originalTerm, term, daysTillPayout;
 	double yield;
+
+public:
+
+	Bond(std::string n, double p, int term, int yield);
+	double movePrice(int days);
+	
 };

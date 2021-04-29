@@ -1,18 +1,23 @@
 #pragma once
 #include <iostream>
-#include <map>
+#include <vector>
 #include <string>
-#include "Position.h"
+#include "Stock.h"
+#include "Asset.h"
 
 class Account {
 
 private:
 	double balance;
-	std::map <std::string, Position> portfolio;
+	std::vector <Asset> portfolio;
+
 public:
 	Account();
 	double getBal();
-	//void addPosition();
-	//void remPosition();
+	double getVal();
+	void chgBal(double change);
+	void order(int n, int i, Account &a);
+	void print();
+	int NAssets();
 
 };

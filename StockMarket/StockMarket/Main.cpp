@@ -1,29 +1,60 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include"IAsset.h"
 #include "Account.h"
+#include "Asset.h"
+#include "Stock.h"
+#include "Bond.h"
+
 using namespace std;
 
-void printMenu(Account A) {
-	cout << "Funds: " << "$" <<A.getBal() << endl;
-	cout << "Portfolio: " << "$" << endl;
-	cout << "1. Buy\n" << "2. Sell\n"
-	<< "3. Positions\n" <<"4. Progress time\n"<< "5. log out\n";
+void printMMenu(Account a) {
+	cout << "Funds: " << "$" <<a.getBal() << endl;
+	cout << "Portfolio: " << "$" << a.getVal() << endl;
+	cout << "1. Buy/Sell\n" << "3. Positions\n" <<"4. Progress time\n"
+	<< "5. log out\n";
 }
-
+//void printPorfolio(vector <Position> portfolio) {
+//	for (auto i : portfolio) {
+//		//cout << i.name << endl;
+//	}
+//}
 int main()
 {
-	int m = 0;
+	int amount, option, m = 0;
+
 	Account user;
-	printMenu(user);
+
+	//user.order(1, 1, user);
+	//user.order(3, 4, user);
+	
+	printMMenu(user);
 
 	while (m != 4) {
 		cin >> m;
 
 		switch (m) {
 			case 1:
+				user.print();
+				cout << "What would you like to buy?" << endl;
+				cin >> option;
+				if (option <= user.NAssets() && option >= 1) {
+					cout << "How many would you like to buy (+int = buy, -int = sell)?" << endl;
+					cin >> amount;
+
+					user.order(amount, option, user);
+				}
+				else {
+					cout << "Invalid option" << endl;
+				}
+				printMMenu(user);
 				break;
 			case 2:
 				break;
 			case 3:
+				user.print();
+				printMMenu(user);
 				break;
 			case 4:
 				break;
