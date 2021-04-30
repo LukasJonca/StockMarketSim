@@ -6,11 +6,12 @@
 
 Asset::Asset() {}
 
-Asset::Asset(std::string n, double p)
+Asset::Asset(std::string n, double p, std::string t)
 {
 	name = n;
 	price = p;
 	quantity = 0;
+	type = t;
 }
 
 void Asset::setPrice(double p) {
@@ -26,17 +27,31 @@ std::string Asset::getName() {
 	return name;
 }
 
-int Asset::getQuantity()
-{
+int Asset::getQuantity(){
 	return quantity;
 }
 
-void Asset::buy(int n)
-{
-	quantity += n;	
+void Asset::setQuantity(int n) {
+	quantity = n;
 }
 
-void Asset::sell(int n)
-{
+void Asset::operator+(int n){
+	quantity += n;
+	std::cout << quantity;
+}
+
+void Asset::operator-(int n){
 	quantity -= n;
 }
+
+//void Asset::movePrice(int days)
+//{
+//}
+
+//bool Asset::operator=(std::string a)
+//{
+//	if (type.compare(a)) {
+//		return true;
+//	}
+//	return false;
+//}

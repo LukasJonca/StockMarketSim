@@ -3,13 +3,17 @@
 #include <vector>
 #include <string>
 #include "Stock.h"
+#include "Bond.h"
 #include "Asset.h"
 
 class Account {
 
 private:
 	double balance;
-	std::vector <Asset> portfolio;
+	std::vector <Asset*> portfolio;
+	Stock food, tech, real;
+	Bond gove, bank, mort;
+
 
 public:
 	Account();
@@ -19,5 +23,5 @@ public:
 	void order(int n, int i, Account &a);
 	void print();
 	int NAssets();
-
+	void time(int n);
 };

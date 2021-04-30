@@ -7,11 +7,12 @@ class Stock : public Asset {
 private:
 	std::string symbol;
 	int top, bottom;
+	
 
 public:
-
+	Stock();
 	Stock(std::string n, std::string s, double p, int t, int b);
-	
-	void movePrice(int days);
+	std::string getSymbol();
+	double movePrice(int days);
 
 };

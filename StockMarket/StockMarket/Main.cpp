@@ -10,7 +10,7 @@
 using namespace std;
 
 void printMMenu(Account a) {
-	cout << "Funds: " << "$" <<a.getBal() << endl;
+	cout << "Funds: " << "$" << a.getBal() << endl;
 	cout << "Portfolio: " << "$" << a.getVal() << endl;
 	cout << "1. Buy/Sell\n" << "3. Positions\n" <<"4. Progress time\n"
 	<< "5. log out\n";
@@ -31,7 +31,7 @@ int main()
 	
 	printMMenu(user);
 
-	while (m != 4) {
+	while (m != 5) {
 		cin >> m;
 
 		switch (m) {
@@ -57,6 +57,9 @@ int main()
 				printMMenu(user);
 				break;
 			case 4:
+				cout << "How many days would you like to pass?";
+				cin >> amount;
+				user.time(amount);
 				break;
 			case 5:
 				exit(0);
