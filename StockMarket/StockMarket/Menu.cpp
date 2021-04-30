@@ -10,15 +10,15 @@ void Menu::printMenu()
 	
 	cout << "Funds: " << "$" << user.getBal() << endl;
 	cout << "Portfolio: " << "$" << user.getVal() << endl;
-	cout << "1. Buy/Sell\n" << "3. Positions\n" << "4. Progress time\n"
-		<< "5. log out\n";
+	cout << "1. Buy/Sell\n" << "2. Positions\n" << "3. Progress time\n"
+		<< "4. log out\n";
 }
 
 void Menu::optionsMenu()
 {
 	printMenu();
 
-	while (m != 5) {
+	while (m != 4) {
 		cin >> m;
 
 		switch (m) {
@@ -38,17 +38,16 @@ void Menu::optionsMenu()
 			printMenu();
 			break;
 		case 2:
-			break;
-		case 3:
 			user.print();
 			printMenu();
 			break;
-		case 4:
+		case 3:
 			cout << "How many days would you like to pass?";
 			cin >> amount;
 			user.time(amount);
+			printMenu();
 			break;
-		case 5:
+		case 4:
 			exit(0);
 			break;
 		default:

@@ -19,7 +19,7 @@ double Bond::movePrice(int days) {
 	daysTillPayout -= days;
 	term -= days;
 	
-	while (daysTillPayout < 0) {
+	while (daysTillPayout <= 0) {
 		if (daysTillPayout <= 0) {
 			daysTillPayout += 365;
 			payment += yield * getPrice() * getQuantity();
@@ -28,7 +28,6 @@ double Bond::movePrice(int days) {
 	
 	
 	if (term <= 0) {
-		std::cout << "test ";
 		payment += getPrice() * getQuantity();
 		setQuantity(0);
 		term = originalTerm;
