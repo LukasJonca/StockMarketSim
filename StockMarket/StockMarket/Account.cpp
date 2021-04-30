@@ -3,17 +3,16 @@
 #include "Bond.h"
 #include "Stock.h"
 #include "Asset.h"
-//using namespace std;
 
 Account::Account() {
 	balance = 10000;
-	food = Stock("Food Corp", "FOO", 20, 55, -50);
-	tech = Stock("Tech Inc", "TCH", 100, 320, -300);
-	real = Stock("Real Property Group", "RPG", 4, 110, -100);
+	food = Stock("Food Corp", "FOO", 20, 55, -50, 0.01);
+	tech = Stock("Tech Inc", "TCH", 100, 315, -310, 0.00);
+	real = Stock("Real Property Group", "RPG", 4, 107, -100, 0.03);
 
-	gove = Bond("Gov AAA", 500, 5, 0.03);
-	bank = Bond("Bank A+", 1000, 10, 0.05);
-	mort = Bond("Bank BB", 1000, 10, 0.06);
+	gove = Bond("Gov AAA Bond", 500, 5, 0.03);
+	bank = Bond("Bank A+ Bond", 1000, 10, 0.05);
+	mort = Bond("Mortgage BB+ Bond", 1000, 10, 0.06);
 	
 	portfolio.push_back(&food);
 	portfolio.push_back(&tech);
@@ -23,10 +22,16 @@ Account::Account() {
 	portfolio.push_back(&mort);
 }
 
+Account::~Account(){
+	//Clears Asset vector
+	portfolio.clear();
+}
+
 double Account::getBal() {
 	return balance;
 }
 
+//calculates the total value of the accounts portfolio
 double Account::getVal()
 {
 	double value = 0;
@@ -35,12 +40,14 @@ double Account::getVal()
 	}
 	return value;
 }
-//
+
 void Account::chgBal(double change)
 {
 	balance += change;
 }
 
+
+//Fufills user buy and sell orders 
 void Account::order(int n, int i, Account &a)
 {
 	if (n > 0) {
@@ -69,37 +76,39 @@ void Account::order(int n, int i, Account &a)
 	}
 }
 
-void Account::print()
-{
-	//Stock temp;
+//Prints the users current portfolio
+void Account::print(){
 	for (int i = 0; i < portfolio.size(); i++) {
-		std::cout << i + 1 << ". " << portfolio[i]->getName();
-		/*if (portfolio[i] = "Stock") {
 
-			std::cout << "(" << portfolio[i]->getPrice() << ")";
-		}*/
+		std::cout << i + 1 << ". " << portfolio[i]->getName();
+		
+		if ((portfolio[i]->getType()).compare("Stock") == 0) {
+			std::cout << " (" << portfolio[i]->getSymbol() << ")";
+		}
+
 		std::cout << std::endl << "\tPrice: $";
 		printf("%.2f", portfolio[i]->getPrice());
-		std::cout << std::endl << "\tOwned: "
-		<< portfolio[i]->getQuantity() << std::endl << std::endl;
+		std::cout << std::endl << "\tOwned: " << 
+		portfolio[i]->getQuantity() << std::endl;
 
-		
+		portfolio[i]->printInfo();
 	}
 }
 
+//returns the number of unique assets in the portfolio
 int Account::NAssets(){
 	return portfolio.size();
 }
 
+//Progresses time for portfolio
 void Account::time(int n)
 {
 	for (int i = 0; i < portfolio.size(); i++) {
-		std::string temp = "Stock";
-		/*if (portfolio[i] == temp) {*/
-			balance += portfolio[i]->movePrice(n);
-		//}
-		
-		
+		balance += portfolio[i]->movePrice(n);
+		if ((portfolio[i]->getPrice())<=0.01) {
+			std::cout << portfolio[i]->getName() << " has been bankrupted!";
+			portfolio.erase(portfolio.begin() + i);
+		}
 	}
 }
 

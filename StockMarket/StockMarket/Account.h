@@ -17,6 +17,7 @@ private:
 
 public:
 	Account();
+	~Account();
 	double getBal();
 	double getVal();
 	void chgBal(double change);

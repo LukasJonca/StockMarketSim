@@ -6,6 +6,8 @@
 
 Asset::Asset() {}
 
+Asset::~Asset(){}
+
 Asset::Asset(std::string n, double p, std::string t)
 {
 	name = n;
@@ -14,15 +16,18 @@ Asset::Asset(std::string n, double p, std::string t)
 	type = t;
 }
 
-void Asset::setPrice(double p) {
+void Asset::setPrice(double p){
 	price = p;
 }
+
 void Asset::setName(std::string n) {
 	name = n;
 }
+
 double Asset::getPrice() {
 	return price;
 }
+
 std::string Asset::getName() {
 	return name;
 }
@@ -35,23 +40,17 @@ void Asset::setQuantity(int n) {
 	quantity = n;
 }
 
+//operator overloading is used for + to add to quantity of asset
 void Asset::operator+(int n){
 	quantity += n;
-	std::cout << quantity;
 }
 
+//operator overloading is used for - to add to quantity of asset
 void Asset::operator-(int n){
 	quantity -= n;
 }
 
-//void Asset::movePrice(int days)
-//{
-//}
+std::string Asset::getType(){
+	return type;
+}
 
-//bool Asset::operator=(std::string a)
-//{
-//	if (type.compare(a)) {
-//		return true;
-//	}
-//	return false;
-//}

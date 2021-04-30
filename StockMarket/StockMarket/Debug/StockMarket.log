@@ -1,2 +1,11 @@
-﻿  Bond.cpp
+﻿  Account.cpp
+c:\users\lukas\desktop\project\stockmarket\stockmarket\account.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\lukas\desktop\project\stockmarket\stockmarket\account.cpp(81): warning C4018: '<': signed/unsigned mismatch
+c:\users\lukas\desktop\project\stockmarket\stockmarket\account.cpp(106): warning C4018: '<': signed/unsigned mismatch
+  Asset.cpp
+  Bond.cpp
+  Main.cpp
+  Menu.cpp
+  Stock.cpp
+  Generating Code...
   StockMarket.vcxproj -> C:\Users\Lukas\Desktop\Project\StockMarket\Debug\StockMarket.exe
